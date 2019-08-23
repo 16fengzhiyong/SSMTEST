@@ -1,0 +1,4 @@
+com\common\nuc\service\base\BaseServiceImpl.class
+com\common\nuc\service\IUserService.class
+com\common\nuc\service\impl\UserServiceImpl.class
+com\common\nuc\service\base\IBaseService.class
