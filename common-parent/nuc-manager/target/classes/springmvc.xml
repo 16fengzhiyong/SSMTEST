@@ -15,17 +15,56 @@
       http://www.springframework.org/schema/tx
       http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
+<!--    这句tmd是重点，虽然我不知道是干什么用的-->
+    <mvc:annotation-driven/>
+<!--当配置了mvc:annotation-driven/后，Spring就知道了我们启用注解驱动。然后Spring通过context:component-scan/标签的配置，会自动为我们将扫描到的@Component，@Controller，@Service，@Repository等注解标记的组件注册到工厂中，来处理我们的请求。-->
+
     <!-- 1.注解扫描位置-->
     <context:component-scan base-package="com.common.nuc.controller" />
 
      <!-- 2.配置映射处理和适配器-->
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
-
+    <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+    <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
     <!-- 3.视图的解析器-->
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/views/" />
+<!--        <property name="prefix" value="/WEB-INF/Modules/" />-->
+        <property name="prefix" value="/WEB-INF/JSP/110/" />
         <property name="suffix" value=".jsp" />
+
     </bean>
+
+    <!-- freemarker config -->
+<!--    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">-->
+<!--        <property name="templateLoaderPath" value="/WEB-INF/HTML/"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="htmlviewResolver"-->
+<!--          class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">-->
+<!--        <property name="suffix" value=".html" />-->
+<!--        <property name="order" value="0"></property>-->
+<!--        <property name="contentType" value="charset=UTF-8"></property>-->
+<!--    </bean>-->
+
+<!--    <bean id="htmlviewResolver"-->
+<!--          class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">-->
+<!--        <property name="prefix" value="/WEB-INF/HTML/" />-->
+<!--        <property name="suffix" value=".html" />-->
+<!--        <property name="order" value="0">-->
+
+<!--        </property>-->
+<!--        <property name="contentType" value="text/html;charset=UTF-8">-->
+
+<!--        </property>-->
+<!--    </bean>-->
+
+
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 </beans>

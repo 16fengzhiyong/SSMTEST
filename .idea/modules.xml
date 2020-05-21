@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/common-parent/common-parent.iml" filepath="$PROJECT_DIR$/common-parent/common-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-parent/nuc-api/nuc-api.iml" filepath="$PROJECT_DIR$/common-parent/nuc-api/nuc-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-parent/nuc-dao/nuc-dao.iml" filepath="$PROJECT_DIR$/common-parent/nuc-dao/nuc-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-parent/nuc-manager/nuc-manager.iml" filepath="$PROJECT_DIR$/common-parent/nuc-manager/nuc-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-parent/nuc-model/nuc-model.iml" filepath="$PROJECT_DIR$/common-parent/nuc-model/nuc-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-parent/nuc-service/nuc-service.iml" filepath="$PROJECT_DIR$/common-parent/nuc-service/nuc-service.iml" />
+    </modules>
+  </component>
+</project>

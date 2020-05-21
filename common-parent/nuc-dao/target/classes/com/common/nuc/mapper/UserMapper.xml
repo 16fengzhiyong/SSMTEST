@@ -2,7 +2,64 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.common.nuc.mapper.UserMapper" >
 
-    <select id="findById" resultType="user" parameterType="int">
+    <select id="findById" resultType="User" parameterType="int">
         SELECT * FROM t_user WHERE id = #{id}
     </select>
+    <insert id="registByPassword"  >
+        INSERT
+        INTO `nuc`.`t_user`( `usernumber`, `password`)
+        VALUES (#{usernumber}, #{password});
+    </insert>
+
+    <select id="loginByPassword" resultType="User" >
+        SELECT * FROM t_user WHERE `password` = #{password} and usernumber = #{usernumber}
+    </select>
+
+    <select id="findUser" resultType="User" >
+        SELECT * FROM t_user WHERE usernumber = #{usernumber}
+    </select>
+
+    <select id="insertShortInputToSQL"  >
+        INSERT
+        INTO `nuc`.`t_shortinput`( `usernumber`, `packagename`, `text`, `cishu`, `beifenshijian`)
+        VALUES (#{usernumber}, #{packagename}, #{info}, #{cishu}, #{beifenshijian});
+    </select>
+    <select id="insertSchedule" >
+        INSERT
+        INTO `nuc`.`t_schedule`( `usernumber`, `time`, `info`,`beifenshijian`)
+        VALUES (#{usernumber}, #{time}, #{info}, #{beifenshijian});
+    </select>
+    <select id="insertNotepad" >
+        INSERT
+        INTO `nuc`.`t_notepad`( `usernumber`, `text`,`beifenshijian`)
+        VALUES (#{usernumber}, #{text}, #{beifenshijian});
+    </select>
+    <select id="deleteAllByBfTimeAndUSN" >
+        DELETE
+        FROM `t_notepad` `t_shortinput` `t_schedule`
+        WHERE `usernumber` = #{usernumber} and `beifenshijian` = #{beifenshijian}
+    </select>
+    <select id="getShortInput"  resultType="com.common.nuc.model.ShortInputModel" >
+        SELECT * FROM t_shortinput WHERE `usernumber` = #{usernumber}
+    </select>
+    <select id="getSchedule"  resultType="com.common.nuc.model.ScheduleModle" >
+        SELECT * FROM t_schedule WHERE `usernumber` = #{usernumber} and `time` = #{time}
+    </select>
+    <select id="getAllSchedule"  resultType="com.common.nuc.model.ScheduleModle" >
+        SELECT * FROM t_schedule WHERE `usernumber` = #{usernumber}
+    </select>
+    <select id="getNotepad"  resultType="com.common.nuc.model.NotepadModel" >
+        SELECT * FROM t_notepad WHERE `usernumber` = #{usernumber}
+    </select>
+
+    <select id="getShortInputByBfTime"  resultType="com.common.nuc.model.ShortInputModel" >
+        SELECT * FROM t_shortinput WHERE `usernumber` = #{usernumber} and `beifenshijian` = #{beifenshijian}
+    </select>
+    <select id="getAllScheduleByBfTime"  resultType="com.common.nuc.model.ScheduleModle" >
+        SELECT * FROM t_schedule WHERE `usernumber` = #{usernumber} and `beifenshijian` = #{beifenshijian}
+    </select>
+    <select id="getNotepadByBfTime"  resultType="com.common.nuc.model.NotepadModel" >
+        SELECT * FROM t_notepad WHERE `usernumber` = #{usernumber} and `beifenshijian` = #{beifenshijian}
+    </select>
+
 </mapper>

@@ -2,8 +2,8 @@ package com.common.nuc.model;
 
 public class User {
     private int id;
-    private String username;
     private String password;
+    private String usernumber;
 
     public int getId() {
         return id;
@@ -11,14 +11,6 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getPassword() {
@@ -29,12 +21,20 @@ public class User {
         this.password = password;
     }
 
+    public String getUsernumber() {
+        return usernumber;
+    }
+
+    public void setUsernumber(String usernumber) {
+        this.usernumber = usernumber;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", usernumber='" + usernumber + '\'' +
                 '}';
     }
 }

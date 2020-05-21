@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="nuc-api:war">
+    <output-path>$PROJECT_DIR$/common-parent/nuc-api/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>nuc-api</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="nuc-api.war">
+      <element id="artifact" artifact-name="nuc-api:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="test49">
+    <output-path>$PROJECT_DIR$/out/artifacts/test49</output-path>
+    <root id="archive" name="nuc-manager_war.war">
+      <element id="artifact" artifact-name="nuc-manager:war exploded" />
+      <element id="javaee-facet-resources" facet="nuc-manager/web/Web" />
+      <element id="javaee-facet-resources" facet="nuc-manager/web/Web" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="nuc-manager:war">
+    <output-path>$PROJECT_DIR$/common-parent/nuc-manager/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>nuc-manager</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="nuc-manager.war">
+      <element id="artifact" artifact-name="nuc-manager:war exploded" />
+    </root>
+  </artifact>
+</component>
